@@ -27,8 +27,8 @@ app.use("/api", router);
 consumer();
 connectDynamo();
 
-cron.schedule("*/10 * * * * *", async () => {
-  console.log("⏳ Running news fetch every 10 seconds...");
+cron.schedule("*/30 * * * *", async () => {
+  console.log("⏳ Running news fetch every 30 minutes...");
 
   for (const category of CATEGORIES) {
     await fetchAndQueueNews(category);
