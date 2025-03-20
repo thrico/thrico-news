@@ -27,7 +27,7 @@ interface NewsArticle {
 
 async function fetchLatestNews(category: string): Promise<NewsArticle[]> {
   try {
-    connection = await amqp.connect(["amqp://localhost"]);
+    connection = await amqp.connect([process.env.RABBITMQ_URL]);
     const channel = await connection.createChannel({
       json: true,
       setup: function (channel) {

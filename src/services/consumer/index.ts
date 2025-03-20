@@ -8,7 +8,7 @@ export let channel;
 
 export const consumer = async () => {
   try {
-    connection = await amqp.connect(["amqp://localhost"]);
+    connection = await amqp.connect([process.env.RABBITMQ_URL]);
     const channel = await connection.createChannel({
       json: true,
       setup: function (channel) {
