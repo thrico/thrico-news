@@ -6,7 +6,8 @@
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
     "exec": "concurrently \"npx tsc --watch\" \"ts-node -r tsconfig-paths/register src/index.ts\"",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "corn": "node dist/corn.js"
   },
   "author": "",
   "license": "ISC",
